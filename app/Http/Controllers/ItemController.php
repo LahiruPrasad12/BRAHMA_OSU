@@ -97,7 +97,7 @@ class ItemController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                'item_id' => ['required', 'integer'],
+                'item_id' => 'required',
                 'name' => 'required|string',
                 'type' => 'required|string',
                 'num_of_items' => 'required|numeric',
@@ -145,7 +145,7 @@ class ItemController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'item_id' => ['required'],
+            'item_id' => 'required',
             'name' => 'required|string|max:255',
             'type' => 'required|string|max:255',
             'num_of_items' => 'required|numeric',
